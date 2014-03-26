@@ -2,7 +2,9 @@ http://symfony.com/doc/current/cookbook/doctrine/reverse_engineering.html
 
 
 How to generate Entities from an Existing Database
+-----------------------------------------------------
 
+Make Table
 
 CREATE TABLE `blog_post` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -24,11 +26,14 @@ CREATE TABLE `blog_comment` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
+Run Commands
+------------
 
 /opt/lampp/bin/php app/console doctrine:mapping:import --force AcmeBlogBundle xml
 
 /opt/lampp/bin/php app/console doctrine:mapping:convert annotation ./src
 /opt/lampp/bin/php app/console doctrine:generate:entities AcmeBlogBundle
 
-
+Generate crud as per entities
+------------------------------
 /opt/lampp/bin/php app/console generate:doctrine:crud
