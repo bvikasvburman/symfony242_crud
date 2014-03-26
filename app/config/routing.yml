@@ -1,0 +1,5 @@
+acme_blog:
+    resource: "@AcmeBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
